@@ -1,46 +1,37 @@
 package com.facol.si.edoo.core.sort;
 
-public class MergeSort implements ISortAlgorithm {
-	
-
+public class BubbleSort implements ISortAlgorithm {
 	@Override
 	public int[] sort(int[] data) {
-		/*if (fim <= inicio) {
-			return;
-		}
-		int meio = (inicio + fim) / 2;
-		sort(array, inicio, meio);
-		sort(array, meio + 1, fim);
-		int[] A = new int[meio - inicio + 1];
-		int[] B = new int[fim - meio];
-		for (int i = 0; i <= meio - inicio; i++) {
-			A[i] = array[inicio + i];
-		}
-		for (int i = 0; i <= fim - meio - 1; i++) {
-			B[i] = array[meio + 1 + i];
-		}
-		int i = 0;
-		int j = 0;
-		for (int k = inicio; k <= fim; k++) {
-			if (i < A.length && j < B.length) {
-				if (A[i] < B[j]) {
-					array[k] = A[i++];
-				} else {
-					array[k] = B[j++];
+		int aux = 0;
+		for (int i = 0; i < data.length; i++) {
+			for (int j = 0; j < data.length - 1; j++) {
+				if (data[j] < data[j + 1]) {
+					aux = data[j];
+					data[j] = data[j + 1];
+					data[j + 1] = aux;
 				}
-			} else if (i < A.length) {
-				array[k] = A[i++];
-			} else if (j < B.length) {
-				array[k] = B[j++];
 			}
-		}*/
-		return null;
+		}
+		return data;
 	}
 
 	@Override
 	public int[] sortStep(int[] data, int step) {
-		// TODO Auto-generated method stub
-		return null;
+		int aux = 0;
+		for (int i = 0; i < data.length; i++) {
+			for (int j = 0; j < data.length - 1; j++) {
+				if (data[j] < data[j + 1]) {
+					aux = data[j];
+					data[j] = data[j + 1];
+					data[j + 1] = aux;
+				}
+				if (i*j == step){
+					return data;
+				}
+			}
+		}
+		return data;
 	}
 
 	@Override
