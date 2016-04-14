@@ -42,7 +42,7 @@ public class MainApp {
 	 */
 	private void initialize() {
 		frmEdooappFacol = new JFrame();
-		frmEdooappFacol.setResizable(false);
+		frmEdooappFacol.setResizable(true);
 		frmEdooappFacol.setTitle("EDOOApp - FACOL");
 		frmEdooappFacol.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
