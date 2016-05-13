@@ -45,14 +45,14 @@ public class MainApp {
 		frmEdooappFacol.setResizable(true);
 		frmEdooappFacol.setTitle("EDOOApp - FACOL");
 		frmEdooappFacol.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		
+
 		JMenuBar menuBar = new JMenuBar();
 		frmEdooappFacol.setJMenuBar(menuBar);
-		
+
 		JMenu mnArquivo = new JMenu("Arquivo");
 		mnArquivo.setMnemonic('A');
 		menuBar.add(mnArquivo);
-		
+
 		JMenuItem mntmSair = new JMenuItem("Sair");
 		mntmSair.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -60,24 +60,43 @@ public class MainApp {
 			}
 		});
 		mnArquivo.add(mntmSair);
-		
+
 		JMenu mnOrdenamento = new JMenu("Ordenamento");
 		menuBar.add(mnOrdenamento);
+
+		JMenuItem mntmDataVector = new JMenuItem("Data Vector");
+		mntmDataVector.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				DataVector dv = new DataVector();
+				dv.setVisible(true);
+				frmEdooappFacol.getContentPane().add(dv);
+			}
+		});
+		mnOrdenamento.add(mntmDataVector);
 		
+		JMenuItem mntmShowData = new JMenuItem("Show Data");
+		mnOrdenamento.add(mntmShowData);
+
 		JMenuItem mntmSelectSort = new JMenuItem("Select Sort");
 		mnOrdenamento.add(mntmSelectSort);
-		
+
 		JMenuItem mntmInsertSort = new JMenuItem("Insert Sort");
 		mnOrdenamento.add(mntmInsertSort);
-		
+
 		JMenuItem mntmMergeSort = new JMenuItem("Merge Sort");
 		mnOrdenamento.add(mntmMergeSort);
-		
+
 		JMenuItem mntmBubbleSort = new JMenuItem("Bubble Sort");
 		mnOrdenamento.add(mntmBubbleSort);
-		
+
 		JMenuItem mntmQuickSort = new JMenuItem("Quick Sort");
 		mnOrdenamento.add(mntmQuickSort);
-	}
 
+		JMenu mnGrafos = new JMenu("Grafos");
+		menuBar.add(mnGrafos);
+
+		JMenuItem mntmrvore = new JMenuItem("\u00C1rvore");
+		mnGrafos.add(mntmrvore);
+		frmEdooappFacol.getContentPane().setLayout(null);
+	}
 }
